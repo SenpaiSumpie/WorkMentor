@@ -1,16 +1,6 @@
 ![Github-Banner](https://user-images.githubusercontent.com/80225763/179600611-48690e20-c211-448f-92ac-d2ac7cd2abbc.png)
 # WorkMentor
 
-## Website
-http://959037-workmentor.s3-website-us-west-2.amazonaws.com/
-
-## SpringBoot API 
-### Live Site
-http://959037workmentorspringbooteb-env.eba-mmqrcbsc.us-west-2.elasticbeanstalk.com/
-
-### Github
-https://github.com/DX-GenC-July-22/959037-WorkMentor-Springboot-Api
-
 ## Vision Statement
 To provide opportunities to individuals so that they can work towards their dream job.
 
