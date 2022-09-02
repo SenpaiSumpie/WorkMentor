@@ -1,0 +1,45 @@
+.bottom-navigation{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.max-width{
+    max-width: 1360px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+h3{
+    color: #404145;
+    font-family: Macan, Helvetica, Neue, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    color: #74767E;
+    font-size: 16px;
+    line-height: 2.5rem;
+}
+
+.content:hover{
+    text-decoration:underline;
+}
+
+@media only screen and (max-width: 1360px){
+    .max-width{
+        flex-direction: column;
+        padding-left: 3rem;
+    }
+}

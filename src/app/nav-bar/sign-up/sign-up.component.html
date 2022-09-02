@@ -1,0 +1,46 @@
+<div class="sign-in-container">
+    <mat-icon class="close" (click)="onNoClick()">close</mat-icon>
+    <h1 >Join WorkMentor</h1>
+    <div class="form">
+        <div class="form" *ngIf="!isConfirm">
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your username</mat-label>
+                <input matInput placeholder="Username" type="username" id="username" name="username" #username="ngModel" [(ngModel)]="user.userName" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="example@example.com" [formControl]="email" type="email" id="email" name="email" [(ngModel)]="user.email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" id="password" name="password" #password="ngModel" [(ngModel)]="user.password" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <a><button mat-button  class="light-tan" (click)="signUp()"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span> Sign Up</button> </a>
+        </div>
+        <div class="form" *ngIf="isConfirm">
+            <div class="center-align">
+                <p class="margin-left"> Please check your inbox for your sign up code to verify your account. </p>
+            </div>
+            <mat-form-field appearance="fill">
+                <mat-label>Enter verification code</mat-label>
+                <input matInput type="text" id="code" name="code" #code="ngModel" [(ngModel)]="user.code">
+            </mat-form-field>
+            <a [routerLink]="'/profile'"><button mat-button  class="light-tan" (click)="confirmSignUp(); onNoClick(); showToast()"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span> Continue</button> </a>
+        </div>
+    </div>
+    <div class="additional">
+        <div class="center-align">
+            <p class="margin-left"> By joining I agree to the Terms and Conditions of WorkMentor </p>
+        </div>
+    </div>
+    <mat-divider class="padding"></mat-divider>
+    <div class="another">
+        <p> Already a member? </p>
+        <a class="link margin-left"> Sign In </a>
+    </div>
+</div>

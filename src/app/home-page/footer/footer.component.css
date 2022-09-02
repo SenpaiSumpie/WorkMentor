@@ -1,0 +1,18 @@
+.footer{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    color: #B5B6BA;
+    font-family: Macan, Helvetica, Neue, Helvetica, Arial, sans-serif;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+hr{
+    border-top: 3px solid #B5B6BA;
+    width: 85%;
+    color: #B5B6BA;
+}

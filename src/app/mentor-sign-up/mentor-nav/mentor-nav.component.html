@@ -1,0 +1,40 @@
+<mat-toolbar id="nav-bar" class="nav-bar">
+    <mat-toolbar-row >
+        <span> 
+            <a [routerLink]="''"> 
+                <img id="light-logo" src="../../assets/Light-Logo.png" alt="Light-Logo" height="100" class="hide-logo">
+            </a>
+        </span> 
+        <span>
+            <a [routerLink]="''">
+                <img id="dark-logo" src="../../assets/Dark-Logo.png" alt="Dark-Logo" height="100" >
+            </a>
+        </span>
+        
+        <!-- This fills the remaining space of the current row -->
+        <span class="fill-remaining-space"></span>
+        <!--<span> <mat-icon>attach_money</mat-icon>USD </span> -->
+        <div class="not-mobile">
+            <span class="right-nav link" [routerLink]="'/mentor-sign-up'" *ngIf="!isAuthenticated && display"> Become a Mentor </span>
+            <span class="right-nav link" (click)="openSignIn()" *ngIf="!isAuthenticated  && display">  Sign In   </span>
+            <span class="right-nav"> <button mat-flat-button class="light-tan" (click)="openSignUp()" *ngIf="!isAuthenticated  && display"> Join </button>  </span>
+            <div *ngIf="isAuthenticated  && display">
+                <img [matMenuTriggerFor]="menu" src="https://material.angular.io/assets/img/examples/shiba1.jpg" class="rounded-circle" width="50" height="50">
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item [routerLink]="['/profile']">Profile</button>
+                    <button mat-menu-item (click)="signOut()">Sign Out</button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="mobile">
+            <mat-icon class="menu" (click)="showMenu()">menu</mat-icon>
+        </div>
+    </mat-toolbar-row>
+    <div id='nav-ul' class="nav-ul nav-ul-hide">
+        <span class="right-nav link" [routerLink]="'/mentor-sign-up'" *ngIf="!isAuthenticated && display"> Become a Mentor </span>
+        <span class="right-nav link" (click)="openSignIn()" *ngIf="!isAuthenticated  && display">  Sign In   </span>
+        <span class="right-nav link tan"  (click)="openSignUp()" *ngIf="!isAuthenticated  && display">  Join   </span>
+        <span class="right-nav link" [routerLink]="['/profile']" *ngIf="isAuthenticated  && display">  Profile  </span>
+        <span class="right-nav link tan"  (click)="signOut()" *ngIf="isAuthenticated  && display">  Sign Out   </span>
+    </div>
+</mat-toolbar>

@@ -1,0 +1,162 @@
+<div class="loading" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</div>
+<div class="content" *ngIf="!loading">
+    <!-- For later maybe
+    <div class="search-suggestions">
+        <p class="title"> Suggested </p>
+        <a class="suggestion"> front-end developer </a>
+        <a class="suggestion"> software engineer </a>
+        <a class="suggestion"> photographer </a>
+        <a class="suggestion"> artist </a>
+    </div> -->
+    <div class="actual-content">
+        <div class="left-side">
+            <h1 class="job-role"> {{mentor.jobTitle}} </h1>
+            <div class="mentor-details">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="rounded-circle" width="50" height="50">
+                <p class="username"> {{mentor.username}} </p>
+                <p class="mentor-rating"> Top Rated Mentor </p>
+                <p class="spacer"> | </p>
+                <mat-icon class="star">star</mat-icon>
+                <mat-icon class="star">star</mat-icon>
+                <mat-icon class="star">star</mat-icon>
+                <mat-icon class="star">star</mat-icon>
+                <mat-icon class="star">star</mat-icon>
+                <p class="rating"> 5.0 </p>
+                <p class="rating-amount"> (1k+) </p>
+                <p class="mentees"> 35 Mentees </p>
+            </div>
+            <mat-divider class="divider"></mat-divider>
+            <div class="mentor-content">
+                <div class="image">
+                    <img class="content-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBCGH3ttKv97u7GnSxpSM4_ijDWF7yPb7GKmva3LU4_ZDJ-X2Jnfw2DVcwgsqmdome8Uo&usqp=CAU" alt="Photo of a Shiba Inu">
+                </div>
+                <div class="about-mentor">
+                    <h1 class="about-title">Work History</h1>
+                    <p class="about-p">{{mentor.workHistory}}</p>
+                    <h1 class="about-title">Success Story</h1>
+                    <p class="about-p"> {{mentor.successStory}} </p>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="container">
+                <mat-tab-group animationDuration="0ms">
+                    <mat-tab label="Basic">
+                        <div class="header">
+                            <p class="package"> Basic Package </p>
+                            <p class="cost"> $10 </p>
+                        </div>
+                        <p class="description">
+                            The Basic Package includes an initial amount of messages between 
+                            you and your mentor to see if this is something you would like.
+                        </p>
+                        <div class="time">
+                            <mat-icon>access_time</mat-icon>
+                            <p class="time-desc"> 30 Day Access </p>
+                            <mat-icon>loop</mat-icon>
+                            <p class="time-desc"> 100 Messages </p>
+                        </div>
+                        <div class="check-boxs">
+                            <div class="option">
+                                <mat-icon class="check">check</mat-icon>
+                                <p class="check-desc"> 100 Messages </p>
+                            </div>
+                            <div class="option">
+                                <mat-icon class="check-not">check</mat-icon>
+                                <p class="check-desc"> Unlimited Time Access </p>
+                            </div>
+                            <div class="option">
+                                <mat-icon class="check-not">check</mat-icon>
+                                <p class="check-desc"> Resume Review </p>
+                            </div>
+                            <div class="option">
+                                <mat-icon class="check-not">check</mat-icon>
+                                <p class="check-desc"> Network Connection </p>
+                            </div>
+                        </div>
+                        <button mat-button class="light-tan" disabled *ngIf="theUser.memberType == 'Mentor'"> Continue ($10) </button>
+                        <button mat-button class="light-tan" *ngIf="theUser.memberType == 'Mentee'" [routerLink]="['/checkout', mentor.id, 'basic']"> Continue ($10) </button>
+                    </mat-tab>
+                    <mat-tab label="Standard">
+                        <div class="header">
+                            <p class="package"> Standard Package </p>
+                            <p class="cost"> $25 </p>
+                        </div>
+                        <p class="description">
+                            The Standard Package includes a longer time period and more
+                            messages to talk to your mentor. This is a good way to communicate
+                            with your mentor if you don't plan on doing so for a long time.
+                        </p>
+                        <div class="time">
+                            <mat-icon>access_time</mat-icon>
+                            <p class="time-desc"> 90 Day Access </p>
+                            <mat-icon>loop</mat-icon>
+                            <p class="time-desc"> 1000 Messages </p>
+                        </div>
+                        <div class="check-boxs">
+                            <div class="option">
+                                <mat-icon class="check">check</mat-icon>
+                                <p class="check-desc"> 1000 Messages </p>
+                            </div>
+                            <div class="option">
+                                <mat-icon class="check-not">check</mat-icon>
+                                <p class="check-desc"> Unlimited Time Access </p>
+                            </div>
+                            <div class="option">
+                                <mat-icon class="check-not">check</mat-icon>
+                                <p class="check-desc"> Resume Review </p>
+                            </div>
+                            <div class="option">
+                                <mat-icon class="check-not">check</mat-icon>
+                                <p class="check-desc"> Network Connection </p>
+                            </div>
+                        </div>
+                        <button mat-button class="light-tan" disabled *ngIf="theUser.memberType == 'Mentor'"> Continue ($25) </button>
+                        <button mat-button class="light-tan" *ngIf="theUser.memberType == 'Mentee'" [routerLink]="['/checkout', mentor.id, 'standard']"> Continue ($25) </button>
+                    </mat-tab>
+                    <mat-tab label="Premium">
+                        <div class="header">
+                            <p class="package"> Premium Package </p>
+                            <p class="cost"> $100 </p>
+                        </div>
+                        <p class="description">
+                            The Premium Package is meant for those who want 
+                            unlimited access to a mentor, and get access to 
+                            a resume review and work connection.
+                        </p>
+                        <div class="time">
+                            <mat-icon>access_time</mat-icon>
+                            <p class="time-desc"> Unlimited Time </p>
+                            <mat-icon>loop</mat-icon>
+                            <p class="time-desc"> Unlimited Messages </p>
+                        </div>
+                        <div class="check-boxs">
+                            <div class="option">
+                                <mat-icon class="check">check</mat-icon>
+                                <p class="check-desc"> Unlimited Messages </p>
+                            </div>
+                            <div class="option">
+                                <mat-icon class="check">check</mat-icon>
+                                <p class="check-desc"> Unlimited Time Access </p>
+                            </div>
+                            <div class="option">
+                                <mat-icon class="check">check</mat-icon>
+                                <p class="check-desc"> Resume Review </p>
+                            </div>
+                            <div class="option">
+                                <mat-icon class="check">check</mat-icon>
+                                <p class="check-desc"> Network Connection </p>
+                            </div>
+                        </div>
+                        <button mat-button class="light-tan" disabled *ngIf="theUser.memberType == 'Mentor'"> Continue ($100) </button>
+                        <button mat-button class="light-tan" *ngIf="theUser.memberType == 'Mentee'" [routerLink]="['/checkout', mentor.id, 'premium']"> Continue ($100) </button>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dumb-padding">
+</div>

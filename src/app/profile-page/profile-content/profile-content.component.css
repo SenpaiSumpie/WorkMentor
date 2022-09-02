@@ -1,0 +1,601 @@
+.loading{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mentor-row{
+    display: flex;
+    max-width: 1360px;
+    width: 100%;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.requests{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+}
+
+.request-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.example-card{
+    background-color: pink;
+}
+
+.profile-section{
+    width: 100%;
+    background-color: #FFF;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.mentor-list{
+    padding-top: 1rem;
+    width: 25%;
+}
+
+.max-width{
+    max-width: 1360px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1{
+    color: #222325;
+    font-weight: bold;
+}
+
+.chats{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.information{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+.icon{
+    color: #62646A;
+}
+
+.left-align{
+    color: #62646A;
+    align-items: flex-start;
+}
+.right-align{
+    color: #62646A;
+    font-weight: bold;
+    align-items: flex-end;
+}
+
+.profile{
+    
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-divider{
+    width: 100%;
+}
+
+.profile-information{
+    width: 25%;
+}
+
+.top-chat{
+    padding: 1rem;
+    border: 1px solid lightgray;
+}
+
+.chat-body{
+    border: 1px solid lightgray;
+}
+
+.active-chats{
+    width:70%;
+    height: 55vh;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+}
+
+.dumb-padding{
+    background-color: white;
+    padding-top: 10rem;
+}
+
+.accept{
+    background-color: #62BD69;
+    color: white;
+    font-weight: bold;
+}
+
+.decline{
+    background-color: #CC0000;
+    color: white;
+    font-weight: bold;
+}
+
+.light-tan {
+    background-color: #e1b382;
+    color: white;
+    border-radius: 0;
+    font-weight: bold;
+    width: 100%;
+  }
+
+.chat-window{
+    width: 100%;
+    margin: 1rem;
+}
+.chat{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.card{
+    height: 550px;
+    border-radius: 15px !important;
+    background-color: rgba(45, 84, 94, 0.4) !important;
+}
+.contacts_body{
+    padding:  0.75rem 0 !important;
+    overflow-y: scroll;
+    height: 40vh;
+    white-space: nowrap;
+    border: 1px solid lightgrey;
+}
+
+.no-message-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.no-messages{
+    font-size: 20px;
+    color: #404145;
+    font-weight: bold;
+}
+
+.no-messages-sub{
+    font-size: 15px;
+    color: #62646A;
+    font-weight: bold;
+}
+
+.msg_card_body{
+    overflow-y: auto;
+    height: 30vh;
+}
+.card-header{
+    border-radius: 15px 15px 0 0 !important;
+    border-bottom: 0 !important;
+}
+
+.container{
+    align-content: center;
+}
+.search{
+    border-radius: 0 !important;
+    border-bottom: 1px solid lightgray !important;
+}
+.search:focus{
+     box-shadow:none !important;
+   outline:0px !important;
+}
+.type_msg{
+    background-color: rgba( 225, 179, 130, 0.7) !important;
+    border:0 !important;
+    color:white !important;
+    height: 30px !important;
+    overflow-y: auto;
+}
+    .type_msg:focus{
+     box-shadow:none !important;
+   outline:0px !important;
+}
+.attach_btn{
+border-radius: 15px 0 0 15px !important;
+background-color: rgba( 225, 179, 130) !important;
+    border:0 !important;
+    color: white !important;
+    cursor: pointer;
+}
+.send_btn{
+    border:0 !important;
+    border-radius: 0 15px 15px 0 !important;
+    background-color: rgba( 225, 179, 130) !important;
+    color: white !important;
+    cursor: pointer;
+}
+.search_btn{
+    border-radius: 0;
+    border: 1px solid lightgray !important;
+    cursor: pointer;
+}
+.contacts{
+    list-style: none;
+    padding: 0;
+}
+.contacts li{
+    width: 100% !important;
+    padding: 5px 10px;
+    margin-bottom: 15px !important;
+}
+
+.mentor-chats{
+    width: 75%;
+    height: 100%;
+}
+
+.messages{
+    flex-direction: column;
+}
+
+.sent{
+    width: 100%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    display: flex;
+}
+
+mat-divider{
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.not-sent{
+    width: 100%;
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.active{
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+}
+.user_img{
+    height: 70px;
+    width: 70px;
+    border:1.5px solid #f5f6fa;
+}
+.user_img_msg{
+    height: 40px;
+    width: 40px;
+    border:1.5px solid #f5f6fa;
+}
+.img_cont{
+    position: relative;
+    height: 70px;
+    width: 70px;
+}
+.img_cont_msg{
+    height: 40px;
+    width: 40px;
+}
+.online_icon{
+position: absolute;
+height: 15px;
+width:15px;
+background-color: #4cd137;
+border-radius: 50%;
+bottom: 0.2em;
+right: 0.4em;
+border:1.5px solid white;
+}
+.offline{
+background-color: #c23616 !important;
+}
+
+
+
+.mentor-info{
+    display: flex;
+    padding-top: 1rem;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+}
+
+.user_info{
+margin-top: auto;
+margin-bottom: auto;
+margin-left: 15px;
+}
+.user_info span{
+font-size: 15px;
+
+}
+.user_info p{
+font-size: 10px;
+
+}
+.video_cam{
+margin-left: 50px;
+margin-top: 5px;
+}
+.video_cam span{
+color: white;
+font-size: 20px;
+cursor: pointer;
+margin-right: 20px;
+}
+
+.sender{
+    color: #62646A;
+    font-weight: bold;
+}
+
+.date-time{
+    color: gray;
+}
+
+.msg_cotainer{
+margin-top: auto;
+margin-bottom: auto;
+margin-left: 10px;
+border-radius: 25px;
+background-color: #F5f5f5;
+padding: 10px;
+position: relative;
+}
+.msg_cotainer_send{
+margin-top: auto;
+margin-bottom: auto;
+margin-right: 10px;
+border-radius: 25px;
+color: white;
+background-color: #e1b382;
+padding: 10px;
+position: relative;
+}
+.msg_time{
+position: absolute;
+left: 0;
+bottom: -15px;
+color: gray;
+font-size: 10px;
+}
+
+.bottom-chat{
+    border: 1px solid lightgray;
+}
+
+.form-group{
+    width: 100%;
+}
+
+.please{
+    width: 100%;
+    
+}
+
+.input{
+    display: flex;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+}
+
+.full-width-input{
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.message-loading{
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full{
+    width: 100%;
+    border: 1px solid lightgrey;
+    height: 45vh;
+    overflow-y: scroll;
+}
+
+.msg_time_send{
+position: absolute;
+right:0;
+bottom: -15px;
+color: gray;
+font-size: 10px;
+}
+.msg_head{
+position: relative;
+}
+#action_menu_btn{
+position: absolute;
+right: 10px;
+top: 10px;
+color: white;
+cursor: pointer;
+font-size: 20px;
+}
+
+.chatbox{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.action_menu{
+z-index: 1;
+position: absolute;
+padding: 15px 0;
+background-color: rgba(0,0,0,0.5);
+color: white;
+border-radius: 15px;
+top: 30px;
+right: 15px;
+display: none;
+}
+.action_menu ul{
+list-style: none;
+padding: 0;
+margin: 0;
+}
+.action_menu ul li{
+width: 100%;
+padding: 10px 15px;
+margin-bottom: 5px;
+}
+.action_menu ul li i{
+padding-right: 10px;
+}
+.action_menu ul li:hover{
+cursor: pointer;
+background-color: rgba(0,0,0,0.2);
+}
+@media(max-width: 576px){
+.contacts_card{
+margin-bottom: 15px !important;
+}
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2d545e; 
+  border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #92bbc6; 
+}
+
+/* Styles for tab labels */
+:host ::ng-deep .mat-tab-label {
+    background-color: #FAFAFA;
+    color: #74767E;
+    font-weight: 700;
+    border: 1px solid lightgrey
+}
+
+/* Styles for the active tab label */
+:host ::ng-deep .mat-tab-label.mat-tab-label-active {
+    
+    
+    background-color: transparent;
+    color: #e1b382;
+    font-weight: 700;
+}
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle{
+    stroke: #e1b382;
+}
+
+/* ink bar */
+::ng-deep .mat-ink-bar {
+    background-color: var(--primary-color,#e1b382) !important;
+    }
+
+    /* Input styling */
+/* Standard */
+::ng-deep .mat-form-field .mat-input-element {
+    color: #74767E;
+}
+::ng-deep .mat-form-field .mat-form-field-label {
+    color: 74767E !important;
+}
+::ng-deep .mat-form-field .mat-form-field-underline {
+    background-color: 74767E;
+}
+::ng-deep .mat-form-field .mat-form-field-ripple {
+    background-color: 74767E;
+}
+::ng-deep .mat-form-field .mat-form-field-required-marker {
+    color: 74767E;
+}
+
+/* Selected */
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: #C89666!important;
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #C89666;
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-required-marker {
+    color: #C89666;
+}
+::ng-deep .mat-form-field.mat-focused .mat-input-element {
+    color: #C89666;
+}
+
+.light-tan{
+    width: 100%;
+    background-color: #e1b382;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1100px){
+    .max-width{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile-information{
+        width: 70%;
+        margin-bottom: 2rem;
+    }
+
+    .dumb-padding{
+        padding-bottom: 10rem;
+    }
+}

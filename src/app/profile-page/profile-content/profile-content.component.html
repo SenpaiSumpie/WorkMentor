@@ -1,0 +1,279 @@
+<div class="loading" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</div>
+<div class="profile-section" *ngIf="!loading">
+    <div class="max-width">
+    <div class="profile-information">
+        <div class="profile">
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="rounded-circle" width="200">
+            <h1>{{theUser.username}}</h1>
+            <mat-divider></mat-divider>
+            <div class="pt-3 w-100">
+                <div class="information">
+                    <p class="left-align"> <mat-icon class="icon">location_on</mat-icon> From: </p>
+                    <p class="right-align"> {{theUser.location}} </p>
+                </div>
+                <div class="information">
+                    
+                    <p class="left-align"> <mat-icon class="icon">date_range</mat-icon> Member Since: </p>
+                    <p class="right-align"> {{theUser.memberSince}} </p>
+                </div>
+                <div class="information">
+                    
+                    <p class="left-align"> <mat-icon class="icon">person</mat-icon> Member Type: </p>
+                    <p class="right-align"> {{theUser.memberType}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="active-chats">
+        <div class="tabs">
+            <mat-tab-group>
+                <mat-tab label="Active Chats"> 
+                    <div class="chats">
+                        <div class="mentor-list">
+                            <div class="search">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search..." name="" class="form-control search">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text search_btn"><i class="fas fa-search"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contacts_body">
+                                <div *ngIf="acceptedConnections.length == 0">
+                                  <div class="">
+                                    <p *ngIf="this.theUser.memberType == 'Mentor'"> No Mentees Yet </p>
+                                    <p *ngIf="this.theUser.memberType == 'Mentee'"> No Mentors Yet </p>
+                                  </div>
+                                </div>
+                                <div *ngFor="let connection of acceptedConnections">
+                                    <div class="mentor-info" *ngIf="this.theUser.memberType == 'Mentor'" (click)="selectMessages(connection.mentee)">
+                                      <div class="active" *ngIf="connection.mentee == receiver">
+                                        <div class="img_cont">
+                                          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="rounded-circle user_img">
+                                        </div>
+                                        <div class="user_info">
+                                            <span>{{connection.mentee}}</span>
+                                        </div>
+                                      </div>
+                                      <div *ngIf="connection.mentee != receiver">
+                                        <div class="img_cont">
+                                          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="rounded-circle user_img">
+                                        </div>
+                                        <div class="user_info">
+                                            <span>{{connection.mentee}}</span>
+                                        </div>
+                                      </div>
+                                  </div>
+                                  <div class="mentor-info" *ngIf="this.theUser.memberType == 'Mentee'" (click)="selectMessages(connection.mentor)">
+                                    <div class="active" *ngIf="connection.mentor == receiver">
+                                      <div class="img_cont">
+                                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="rounded-circle user_img">
+                                      </div>
+                                      <div class="user_info">
+                                          <span>{{connection.mentor}}</span>
+                                      </div>
+                                    </div>
+                                    <div *ngIf="connection.mentor != receiver">
+                                      <div class="img_cont">
+                                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="rounded-circle user_img">
+                                      </div>
+                                      <div class="user_info">
+                                          <span>{{connection.mentor}}</span>
+                                      </div>
+                                    </div>
+                                </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mentor-chats">
+                            <div class="top-chat">
+                                <div class="d-flex bd-highlight" >
+                                    <div class="img_cont" *ngIf="this.receiver != ''">
+                                      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="rounded-circle user_img">
+                                    </div>
+                                    <div class="user_info" *ngIf="this.receiver != ''">
+                                      <span>Chat with {{receiver}}</span>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="message-loading" *ngIf="this.messageLoading == true">
+                              <mat-spinner></mat-spinner>
+                            </div>
+                            <div class="chat-body card-body msg_card_body flex-fill" *ngIf="this.senderMessages.length == 0 && this.messageLoading == false">
+                              <div class="no-message-content">
+                                <p class="no-messages"> No Messages to Show Here </p>
+                                <p class="no-messages-sub"> Please select someone to chat with or start chatting now </p>
+                              </div>
+                            </div>
+                            <div class="chat-body" *ngIf="this.senderMessages.length > 0 && this.messageLoading == false">
+                                <div class="card-body msg_card_body ">
+                                    <div class="d-flex justify-content-start mb-4 messages">
+                                      <div *ngFor="let message of senderMessages">
+                                        <mat-divider></mat-divider>
+                                        <div class="sent" *ngIf="message.sender == theUser.email">
+                                          <p class="sender"> {{message.sender}}</p>
+                                          <p class="msg_cotainer_send"> {{message.message}} </p>
+                                          <p class="date-time"> {{message.timeSent}}</p>
+                                        </div>
+                                        <div class="not-sent" *ngIf="message.sender != theUser.email">
+                                          <p class="sender"> {{message.sender}}</p>
+                                          <p class="msg_cotainer"> {{message.message}} </p>
+                                          <p class="date-time">{{message.timeSent}}</p>
+                                        </div>
+                                      </div>
+                                      <!--
+                                      <div class="img_cont_msg">
+                                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="rounded-circle user_img_msg">
+                                      </div>
+                                      <div class="msg_cotainer">
+                                        Hi, how are you samim?
+                                        <span class="msg_time">8:40 AM, Today</span>
+                                      </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end mb-4">
+                                      <div class="msg_cotainer_send">
+                                        Hi jassa i am good tnx how about you?
+                                        <span class="msg_time_send">8:55 AM, Today</span>
+                                      </div>
+                                      <div class="img_cont_msg">
+                                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="rounded-circle user_img_msg">
+                                      </div>
+                                    </div>
+                                  -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-chat">
+                                <div class="card-footer">
+                                    <div class="chatbox" *ngIf="this.receiver != ''">
+                                      <div class="input-group-append">
+                                        <span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
+                                      </div>
+                                      <input 
+                                        class="input" 
+                                        matInput 
+                                        type="text" 
+                                        [(ngModel)]="newMessage.message"  
+                                        id="message" 
+                                        name="message" 
+                                        placeholder="Type your message..."
+                                        #message="ngModel">
+                                      
+                                      <div class="input-group-append" (click)="sendMessage()">
+                                        <span class="input-group-text send_btn"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="messageSent"></span><i class="fas fa-location-arrow"></i></span>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Mentorship Requests" *ngIf="theUser.memberType == 'Mentor'">
+                  <div class="request-div">
+                    <div class="requests" *ngFor="let connection of connections">
+                      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="rounded-circle user_img_msg">
+                      <!--<p class="name">Firstname LastName</p>
+                      <p class="username">Username</p>-->
+                      <p> {{connection.mentee}} </p>
+                      
+                      <button mat-button class="accept" (click)="accept(connection)"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="memberAccepted"></span>Accept</button>
+                      <button mat-button class="decline" (click)="decline(connection)"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="memberDeclined"></span>Decline</button> 
+                    </div>
+                  </div>
+                </mat-tab>
+                <mat-tab label="Settings">
+                    <div class="full">
+                            <div class="card-body flex">
+                              <form class="please" (ngSubmit)="onSubmit()" #userForm="ngForm">
+                                <div class="form-group">
+                                  
+                                  <mat-form-field class="full-width-input" appearance="fill">
+                                    <mat-label for="firstName">First Name</mat-label>
+                                    <input matInput type="text" [(ngModel)]="theUser.firstName"  
+                                    id="firstName" 
+                                    name="firstName" 
+                                    placeholder="Enter your first name"
+                                    #firstName="ngModel">
+                                  </mat-form-field>
+                                  
+                                </div>
+                                <div class="form-group">
+                                  <mat-form-field class="full-width-input" appearance="fill">
+                                    <mat-label for="lastName">Last Name</mat-label>
+                                    <input matInput type="text" [(ngModel)]="theUser.lastName"  
+                                    id="lastName" 
+                                    name="lastName" 
+                                    placeholder="Enter your last name"
+                                    #lastName="ngModel">
+                                  </mat-form-field>
+                                  </div>
+                                <!--
+                                <div class="form-group">
+                                  <mat-form-field class="full-width-input" appearance="fill">
+                                    <mat-label for="email">Email</mat-label>
+                                    <input matInput type="text" [(ngModel)]="theUser.email"  
+                                    id="email" 
+                                    name="email" 
+                                    placeholder="Enter your Email"
+                                    #email="ngModel">
+                                  </mat-form-field>
+                                </div>
+                                -->
+                                <div class="form-group" *ngIf='theUser.memberType == "Mentor"'>
+                                  <mat-form-field class="full-width-input" appearance="fill">
+                                    <mat-label for="jobTitle">Job Title</mat-label>
+                                    <input matInput type="text" [(ngModel)]="theUser.jobTitle"  
+                                    id="jobTitle" 
+                                    name="jobTitle" 
+                                    placeholder="Enter your Job Title"
+                                    #jobTitle="ngModel">
+                                  </mat-form-field>
+                                  </div>
+                                  <div class="form-group">
+                                    <mat-form-field class="full-width-input" appearance="fill">
+                                      <mat-label for="location">Location</mat-label>
+                                      <input matInput type="text" [(ngModel)]="theUser.location"  
+                                      id="location" 
+                                      name="location" 
+                                      placeholder="Enter your Location"
+                                      #location="ngModel">
+                                    </mat-form-field>
+                                  </div>
+                                 
+                                  <div class="form-group" *ngIf='theUser.memberType == "Mentor"'>
+                                    <mat-form-field class="full-width-input" appearance="fill">
+                                      <mat-label for="successStory">Success Story</mat-label>
+                                      <input matInput type="text" [(ngModel)]="theUser.successStory"  
+                                      id="successStory" 
+                                      name="successStory" 
+                                      placeholder="Enter your Success Story"
+                                      #successStory="ngModel">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="form-group" *ngIf='theUser.memberType == "Mentor"'>
+                                    <mat-form-field class="full-width-input" appearance="fill">
+                                      <mat-label for="workHistory">Work History</mat-label>
+                                      <input matInput type="text" [(ngModel)]="theUser.workHistory"  
+                                      id="workHistory" 
+                                      name="workHistory" 
+                                      placeholder="Enter your Work History"
+                                      #workHistory="ngModel">
+                                    </mat-form-field>
+                                  </div>
+                                <button mat-button type="submit" [disabled]="!userForm.form.valid" 
+                                  class="light-tan"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="submitted"></span>Submit</button>
+                              </form>
+                    </div>
+                  </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="dumb-padding">
+
+</div>

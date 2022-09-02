@@ -1,0 +1,39 @@
+<div class="container dark-background">
+    <div class="max-width">
+        <div class="search-bar-section">
+            <div>
+                <h1 class="bigger-font">Find the perfect <span class="fancy-font">mentor</span> for your dream job journey</h1>
+            </div>
+            <form class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input
+                    type="text"
+                    id="search-bar"
+                    name="search"
+                    [(ngModel)] = "search"
+                    placeholder="Try: &quot;front end developer&quot;"
+                />
+                
+                <button type="button" class="btn btn-primary light-tan hide-button" [routerLink]="['/search', search]" >
+                    Search
+                </button>
+            
+            </form>
+            <button type="button" class="btn btn-primary light-tan show-button" [routerLink]="['/search', '']" >
+                Search
+            </button>
+            <div class="popular-searches">
+                <span class="bold-stuff"> Popular: </span>
+                <span class="popular-search" [routerLink]="['/search', 'front-end-developer']"> Front-End Developer </span>
+                <span class="popular-search" [routerLink]="['/search', 'software-engineer']"> Software Engineer </span>
+            </div>
+        </div>
+        <div class="testimonials">
+            <img src="../../assets/testimonials.png" alt="Max">
+            <div class="bottom-content">
+                <span class="stars"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></span>
+                <p class="mentor"><span class="lower">Max Mosier, </span><span class="bold">Front-End Developer</span> </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="loading" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</div>
+<div class="checkout-page" *ngIf="!loading">
+    <div class="max-width">
+        <div class="order-summary">
+            <div class="top-order-summary">
+                <img class="content-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBCGH3ttKv97u7GnSxpSM4_ijDWF7yPb7GKmva3LU4_ZDJ-X2Jnfw2DVcwgsqmdome8Uo&usqp=CAU" alt="Photo of a Shiba Inu">
+                <div class="about-order"a>
+                    <h1>{{mentor.jobTitle}}</h1>
+                    <p> {{mentor.firstName}} {{mentor.lastName}} </p>
+                </div>
+                <div class="quantity">
+                    <p> Qty </p>
+                    <p> 1 </p>
+                    <p> ${{subtotal}} </p>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+        </div>
+        <div class="price-summary">
+            <div class="price-summary-box">
+                <div class="align-left">
+                    <h1 class="price-title"> Price Summary </h1>
+                </div>
+                <div class="summary">
+                    <p class="summary-fee"> Subtotal: </p>
+                    <span class="fill-space"></span> 
+                    <p class="summary-fee">${{subtotal}}</p>
+                </div>
+                <div class="summary">
+                    <p class="summary-fee"> Service Fee: </p>
+                    <span></span>
+                    <p class="summary-fee">  ${{serviceFee}} </p>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="summary">
+                    <p class="total"> Total: </p>
+                    <p class="total"t> ${{total}} </p>
+                </div>
+                <button mat-button class="light-tan" (click)="requestMentorShip()"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="mentorshipLoading"></span> Request Mentorship </button>
+                <p class="charged"> You won't be charged yet</p>
+            </div>
+            <div class="card-info">
+                <img class="payment-info" src="https://media.horusrc.com/wysiwyg/pay_by_cards.jpg" alt="Payment">
+                <div class="payment">
+                    <p> SSL SECURED PAYMENT </p>
+                    <p> Your information is protected by 256-bit SSL encryption </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="sign-in-container">
+    <mat-icon class="close" (click)="onNoClick()">close</mat-icon>
+    <h1 >Sign In to WorkMentor</h1>
+    <div class="form">
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your email or username</mat-label>
+            <input matInput placeholder="example@example.com or username" type="email" id="email" name="email" #email="ngModel" [(ngModel)]="user.email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" id="password" name="password" #password="ngModel" [(ngModel)]="user.password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            </mat-form-field>
+        <a><button mat-button  class="light-tan" (click)="signIn()"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span> Sign In</button> </a>
+    </div>
+    <div class="additional">
+        <div class="left-align">
+            <mat-checkbox></mat-checkbox>
+            <p class="margin-left"> Remember Me </p>
+        </div>
+        <div class="right-align">
+            <a  class="link"> Forgot Password? </a>
+        </div>
+    </div>
+    <mat-divider class="padding"></mat-divider>
+    <div class="another">
+        <p> Not a Member yet? </p>
+        <a class="link margin-left"> Join Now </a>
+    </div>
+</div>

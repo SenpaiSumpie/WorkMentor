@@ -1,0 +1,285 @@
+.content{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+.package{
+    color: #404145;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.check-boxs{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.check{
+    color: #e1b382;
+}
+
+.check-not{
+    color: #95979D;
+}
+
+.check-desc{
+    color: #95979D;
+}
+
+.option{
+    display: flex;
+}
+
+.time-desc{
+    color: #62646A;
+    font-weight: bold;
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.cost{
+    color: #404145;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.time{
+    display: flex;
+    margin: 1rem;
+}
+
+.description{
+    margin: 1rem;
+    color: #62646A;
+    text-align: left;
+    inline-size: 400px;
+    overflow-wrap: break-word;
+}
+
+.about-title{
+    color: #62646A;
+    font-weight: bold;
+}
+
+.about-p{
+    color: #62646A;
+}
+
+.dumb-padding{
+    height: 20vh;
+    background-color: white;
+    width: 100%;
+}
+
+.mentor-content{
+    display:flex;
+    justify-content: center;
+}
+.about-mentor{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.mentor-details{
+    display: flex;
+    width: 100%;
+    align-items:center;
+    justify-content: space-evenly;
+}
+.username{
+    color: #404145;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.image{
+    display: flex;
+    width: 100%;
+}
+
+.content-img{
+    display: flex;
+    aspect-ratio: 1/1;
+    flex-grow: 1;
+    width: 100%;
+    padding: 1rem;
+}
+
+.star{
+    color: #FFB33E;
+    margin-top: -0.75rem;
+}
+
+.mentees{
+    color: #95979D;
+}
+
+
+
+.rating-amount{
+    color: #62646A;
+}
+
+.rating{
+    color: #FFB33E;
+    font-weight: bold;
+}
+
+.mentor-rating{
+    font-size: 14px;
+    color: #FFB33E;
+}
+
+.loading{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spacer{
+    color: lightgrey;
+}
+
+.left-side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.divider{
+    margin-top: 1rem;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.actual-content{
+    max-width: 1360px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.job-role{
+    font-size: 28px;
+    color: #404145;
+    font-weight: bold;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+}
+
+
+.search-suggestions{
+    background-color: #ECECEC;
+    display: flex;
+    flex-direction: row;
+    justify-content:baseline;
+    align-items:center;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+}
+.title{
+    padding-top:0.5rem;
+    margin-left: 14rem;
+    margin-right: 1rem;
+    font-size: 18px;
+    color: #62646A;
+    font-weight: bold;
+    text-align: center;
+}
+
+a{
+    color: #62646A;
+    background-color: white;
+    margin: 15px 10px 15px 0px;
+    padding: 7.5px;
+    border-radius: 4px;
+    border: 1px solid lightgray;
+    /*box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;*/
+}
+
+a:hover{
+    cursor: pointer;
+    background-color: lightgray;
+    border: 1px solid lightslategray;
+}
+
+.container{
+    border: 1px solid lightgrey;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.right-side{
+    padding: 1rem;
+}
+
+
+/* Styles for tab labels */
+:host ::ng-deep .mat-tab-label {
+    background-color: #FAFAFA;
+    color: #74767E;
+    font-weight: 700;
+    border: 1px solid lightgrey
+}
+
+/* Styles for the active tab label */
+:host ::ng-deep .mat-tab-label.mat-tab-label-active {
+    
+    
+    background-color: transparent;
+    color: #e1b382;
+    font-weight: 700;
+}
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle{
+    stroke: #e1b382;
+}
+
+/* ink bar */
+::ng-deep .mat-ink-bar {
+    background-color: var(--primary-color,#e1b382) !important;
+    }
+
+    .light-tan{
+       width: 90%;
+       background-color: #e1b382;
+       color: white;
+       font-weight: bold;
+       margin-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+@media only screen and (max-width: 1360px) {
+    .actual-content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right-side{
+        width: 100%;
+    }
+    
+    .left-side{
+        width: 100%;
+    }
+}

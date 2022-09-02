@@ -1,0 +1,164 @@
+.sign-in-container{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1{
+    align-items: center;
+    text-align: center;
+}
+
+
+  .light-tan {
+    background-color: #e1b382;
+    color: white;
+    border-radius: 0;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  .example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+  
+  .padding{
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  }
+  
+  .additional{
+      display: flex;
+      margin-top: 1rem;
+      justify-content: space-between;
+  }
+  
+  .left-align{
+      display: flex;
+      flex-direction: row;
+      align-items: left;
+      justify-content: space-between;
+  }
+  
+  .right-align{
+      display:flex;
+      align-items: right;
+  }
+  
+  .margin-left{
+      margin-left: 0.5rem;
+  }
+  
+  .link{
+      color: #92bbc6;
+  }
+  
+  .link:hover{
+      cursor: pointer;
+  }
+  
+  .another{
+      display:flex;
+      justify-content: center;
+  }
+  
+  .close{
+      color: #12343b;
+  }
+  
+  .close:hover{
+      cursor: pointer;
+  }
+  
+  /* https://www.angularjswiki.com/angular/mat-checkbox-color/*/
+  .mat-checkbox-check.mat-accent .mat-checkbox-background{
+      background-color: #e1b382 !important;
+  }
+  
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+      background-color: #e1b382 !important;
+  }
+  
+  ::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+      background-color: #e1b382 !important;
+  }
+  
+  ::ng-deep .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+      background-color: #e1b382 !important;
+  }
+
+  p{
+    color: #62646A;
+  }
+
+  .center-align{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+/* Input styling */
+/* Standard */
+::ng-deep .mat-form-field .mat-input-element {
+    color: #74767E;
+}
+::ng-deep .mat-form-field .mat-form-field-label {
+    color: 74767E !important;
+}
+::ng-deep .mat-form-field .mat-form-field-underline {
+    background-color: 74767E;
+}
+::ng-deep .mat-form-field .mat-form-field-ripple {
+    background-color: 74767E;
+}
+::ng-deep .mat-form-field .mat-form-field-required-marker {
+    color: 74767E;
+}
+
+/* Selected */
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: #C89666!important;
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #C89666;
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-required-marker {
+    color: #C89666;
+}
+::ng-deep .mat-form-field.mat-focused .mat-input-element {
+    color: #C89666;
+}
+
+
+/*Invalid
+https://stackoverflow.com/questions/48540533/styling-mat-form-field-input-in-angular-material
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-input-element {
+    color: #ff33cc;
+}
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+    color: #ff33cc!important;
+}
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker {
+    color: #ff33cc;
+}
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+    background-color: #ff33cc;
+}*/

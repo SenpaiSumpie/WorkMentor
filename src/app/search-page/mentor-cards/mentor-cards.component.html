@@ -1,0 +1,67 @@
+<div class="loading" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</div>
+<div class="no-results" *ngIf="!loading && users.length == 0">
+    <div class="no-result-content">
+        <img class="confusion" src="https://static.vecteezy.com/system/resources/previews/003/475/012/original/confused-man-with-question-mark-concept-flat-illustration-free-vector.jpg" alt="NoMentors">
+        <h1 class="no-mentor">No Mentors Found For Your Search</h1>
+        <p class="new-search">
+            No mentors were found for that field, please try a different search.
+        </p>
+        <form class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input
+                type="text"
+                id="search-bar"
+                name="search"
+                [(ngModel)] = "search"
+                placeholder="Try: &quot;front end developer&quot;"
+            />
+            
+            <button type="button" class="btn btn-primary light-tan hide-button search-btn" [routerLink]="['/search', search]" (click)="refresh()">
+                Search
+            </button>
+        </form>
+        <div class="dumb-padding">
+
+        </div>
+    </div>
+</div>
+<div class="mentor-cards" *ngIf="!loading && users.length > 0">
+    <div class="max-width col">
+        <div class="row" >
+            <mat-card class="example-card col-lg-4 col-md-8 col-sm-16" *ngFor="let user of users">
+                <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title class="title">{{user.firstName}} {{user.lastName}}</mat-card-title>
+                <mat-card-subtitle class="subtitle">{{user.jobTitle}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBCGH3ttKv97u7GnSxpSM4_ijDWF7yPb7GKmva3LU4_ZDJ-X2Jnfw2DVcwgsqmdome8Uo&usqp=CAU" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                <p class="description">
+                    {{user.successStory}}
+                </p>
+                <div class="rating">
+                    <mat-icon class="star">star</mat-icon>
+                    <p class="stars">
+                        5.0 <span class="total">(1k+)</span>
+                    </p>
+                </div>
+                </mat-card-content>
+                <mat-divider></mat-divider>
+                <mat-card-actions>
+                    <div class="options">
+                        <div class="left-align">
+                            <mat-icon class="light-grey">menu</mat-icon>
+                            <mat-icon class="light-grey">favorite</mat-icon>
+                        </div>
+                        <div class="right-align">
+                            <button mat-button class="light-tan" [routerLink]="['/mentor-page', user.id]">MORE DETAILS</button>
+                        </div>
+                    </div>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
+

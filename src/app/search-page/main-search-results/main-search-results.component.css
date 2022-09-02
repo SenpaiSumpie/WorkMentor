@@ -1,0 +1,129 @@
+.explore-careers {
+    background-color: #FFF;
+    padding-top:5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #404145;
+    width: 100%;
+}
+
+.max-width{
+    max-width: 1360px;
+    width: 100%;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.career-cards {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding-right: 5rem;
+}
+
+.career-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+}
+
+
+hr{
+    width: 50%;
+    border-top: 3px solid #92bbc6;
+    opacity: 1;
+}
+
+hr:hover{
+    width:75%;
+    transition: 0.25s;
+}
+
+.career-card:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38,38,0.2);
+    cursor:pointer;
+}
+
+h5{
+    font-size: medium;
+    font-weight: bold;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.slider{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 35%;
+    padding-bottom: 0.5rem;
+}
+
+
+/* Angular Slider Change color
+https://stackoverflow.com/questions/45389498/change-default-background-color-of-md-slider-of-angular-material*/
+/* CSS to change Default/'Accent' color */
+
+.mat-slide-toggle{
+    color: #62646a;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #c89666; /*replace with your color*/
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #e1b382;  /*replace with your color*/
+}
+
+/* CSS to change 'Primary' color */
+
+::ng-deep .mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #e1b382;
+}
+
+::ng-deep .mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #e1b382;
+}
+
+/* CSS to change 'Warn' color */
+
+::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #e1b382;
+}
+
+::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #ffe066;
+}
